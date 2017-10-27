@@ -6,9 +6,6 @@ import logger       from 'morgan';
 import cookieParser from 'cookie-parser';
 import bodyParser   from 'body-parser';
 
-import routes       from './routes/index';
-import users        from './routes/users'
-
 //using let
 let app = express();
 
@@ -21,8 +18,9 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+app.get('/', function (req, res) {
+    res.send('GET request to the homepage')
+  });
 
 // using arrow syntax
 app.use((req, res, next) => {

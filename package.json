@@ -2,8 +2,11 @@
   "name": "es6-vs-code-debug",
   "version": "1.0.0",
   "description": "This is my attempt at setting up Visual Studio Code to debug ES6",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
+    "a": "babel --presets env app.js --out-file proxified.js",
+    "start": "./node_modules/.bin/babel-node app.js",
+    "auto-start": "nodemon ./app.js localhost 8080",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,7 +20,6 @@
   },
   "homepage": "https://github.com/ryanvgates/es6-vs-code-debug#readme",
   "dependencies": {
-    "babel-cli": "^6.26.0",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "debug": "^3.1.0",
@@ -25,5 +27,13 @@
     "jade": "^1.11.0",
     "morgan": "^1.9.0",
     "serve-favicon": "^2.4.5"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "lint": "^1.1.2",
+    "nodemon": "^1.12.1"
   }
 }
