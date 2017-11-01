@@ -6,7 +6,7 @@
   "scripts": {
     "a": "babel --presets env app.js --out-file proxified.js",
     "start": "./node_modules/.bin/babel-node dist/bin/app.js",
-    "auto-start": "nodemon ./app.js localhost 8080",
+    "auto-start": "nodemon dist/bin/app.js localhost 8080",
     "build:lib": "cross-env BABEL_ENV=lib node_modules/.bin/babel src/ --ignore=src/__mocks__ --out-dir=dist --source-maps",
     "build:bin": "cross-env BABEL_ENV=cli node_modules/.bin/babel src/bin/ --out-dir=dist/bin --copy-files --source-maps",
     "build": "rm -rf dist/ && npm run build:lib && npm run build:bin",
